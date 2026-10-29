@@ -4,20 +4,19 @@
 
 int main(void)
 {
-    int i;
-    int grade[SIZE];
-    int score[SIZE];
+    int a[SIZE] = {1, 2, 3, 4, 5};
+    int b[SIZE] = {1, 2, 6, 1, 3};
+    int flag_same = 1;
 
-    for (i=0; i<SIZE; i++) {
-        grade[i] = rand() % 100;}
-
-    for (i=0; i<SIZE; i++) {
-        score[i] = grade[i];
+    for (int i = 0; i < SIZE; i++) {
+        if (b[i] != a[i]) {
+            printf("Not same\n");
+            printf("a[%d] = %d, b[%d] = %d\n", i, a[i], i, b[i]);
+            flag_same = 0;
+        }
     }
-
-    for (i=0; i<SIZE; i++) {
-        printf("score[%d]: %d\n", i, score[i]);
+    if (flag_same) {
+        printf("Same\n");
     }
-
     return 0;
 }
